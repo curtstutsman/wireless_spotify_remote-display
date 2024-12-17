@@ -62,7 +62,7 @@ const int pwmBitsRed = 3;
 const int pwmBitsGreen = 3;
 const int pwmBitsBlue = 2;
 const int maxPwmBits = 3; // Maximum number of bits among R, G, B
-int baseDelay = 200; // Adjust this value based on your refresh rate requirements
+int baseDelay = 200;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,8 +90,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     uint32_t currentTime = HAL_GetTick();
 
-   // Handle rotary encoder rotation (connected to GPIO_PIN_0 and GPIO_PIN_1)
-    if (GPIO_Pin == GPIO_PIN_0)  // Pins A and B of the encoder
+    if (GPIO_Pin == GPIO_PIN_0)  // Pins A of the encoder
     {
 
     	//Debounce Rotation
@@ -119,7 +118,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
     }
 
-    // Handle button press (connected to GPIO_PIN_2)
+    // Handle button press (connected to GPIO_PIN_4)
     if (GPIO_Pin == GPIO_PIN_4)  // Button press on the encoder
     {
 		// Debounce the button press
@@ -229,12 +228,12 @@ void setPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b) {
 void init_buf(){
     for (int y = 0; y < 32; y++) {
         for (int x = 0; x < IMAGE_SIZE; x++) {
-            setPixel(x, y, 0x00, 0x07, 0x00); // Green color
+            setPixel(x, y, 0x00, 0x07, 0x00); // Green 
         }
     }
     for (int y = 32; y < IMAGE_SIZE; y++) {
         for (int x = 0; x < IMAGE_SIZE; x++) {
-            setPixel(x, y, 0x00, 0x00, 0x00); // Black color
+            setPixel(x, y, 0x00, 0x00, 0x00); // Black 
         }
     }
 }

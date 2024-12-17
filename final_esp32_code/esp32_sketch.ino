@@ -12,13 +12,13 @@
 uint8_t rgbArray[IMAGE_SIZE][IMAGE_SIZE][3];
 const char* filename = "/image.jpg";
 
-const char* ssid = "IllinoisNet_Guest";
+const char* ssid = "";
 const char* password = "";
-String client_id = "91c006a425e84d69876247225ab39a03"; 
-String client_secret = "a9e8d50a696043f4a34db3692752a020"; 
+String client_id = ""; 
+String client_secret = ""; 
 
 String accessToken = "";
-const char* refresh_token = "AQDAuNwFjpob35Skk81jcmjvVUIbm3C9jC90YVG9y1gTTMYHHZm2w0FDaCfeVRIkgqu7NU53z_0ZjDOtZI52QfF6TwGqoDXAiiIACC7znVcVo0gC6IzEwxIXZZZUbhCFylA"; // Refresh token for getting new access token
+const char* refresh_token = ""; // Refresh token for getting new access token
 
 String lastAlbumLink = "";
 unsigned long previousMillis = 0;
